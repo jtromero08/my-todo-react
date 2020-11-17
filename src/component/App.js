@@ -42,14 +42,9 @@ class App extends React.Component {
   }
 
   addTodo = (todoData) => {
-
-    console.log(todoData)
     todoData += (Math.floor(Math.random()* 32) + 10).toString()
-    console.log(todoData)
-    
 
     let todoId = this.hashFunction(todoData);
-    console.log(todoId)
     let todoObj = {
       id: todoId,
       todo: todoData
@@ -68,12 +63,11 @@ class App extends React.Component {
 
 
   render() {
-    console.log(this.state.todoList)
     return (
-    <div className="App">
-      <Input handler={this.addTodo} />
-      <TodoList todoList={this.state.todoList} handler={this.deleteTodo}/>
-    </div>
+      <div className="App">
+        <Input handler={this.addTodo} />
+        <TodoList todoList={this.state.todoList} handler={this.deleteTodo}/>
+      </div>
     )
   };
 }
